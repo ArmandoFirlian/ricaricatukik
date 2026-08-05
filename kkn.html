@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKN Untidar Kelompok 102 - Poncosari 2026</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #0d9488;
+            --accent: #f59e0b;
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header / Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        nav a {
+            margin-left: 1.5rem;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.85), rgba(13, 148, 136, 0.85)), 
+                        url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1350&q=80') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge {
+            background: var(--accent);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Section Layout */
+        section {
+            padding: 5rem 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            display: block;
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* DPL Card */
+        .dpl-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+
+        .dpl-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            text-align: center;
+            max-width: 350px;
+            border-top: 5px solid var(--accent);
+        }
+
+        .dpl-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            background-color: #e2e8f0;
+        }
+
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            background-color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 2.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .card .role {
+            color: var(--secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card .dept {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+        }
+
+        .card .contacts {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: auto;
+        }
+
+        .card .contacts a {
+            color: var(--primary);
+            font-size: 1.2rem;
+            transition: 0.2s;
+        }
+
+        .card .contacts a:hover {
+            color: var(--accent);
+        }
+
+        /* Photo Gallery Placeholder */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            height: 200px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-weight: 500;
+            border: 2px dashed #cbd5e1;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            nav { display: none; } /* Bisa ditambahkan hamburger menu jika disukai */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">KKN 102 UNTIDAR</div>
+        <nav>
+            <a href="#home">Beranda</a>
+            <a href="#dpl">DPL</a>
+            <a href="#struktur">Anggota Tim</a>
+            <a href="#galeri">Galeri</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <span class="badge">Kelompok 102</span>
+        <h1>Mengabdi Bersama Dikenang Selamanya</h1>
+        <p>Padukuhan Ngentak, Kalurahan Poncosari, Srandakan, Bantul</p>
+        <p><i class="fa-regular fa-calendar-days"></i> 6 Agustus 2026</p>
+    </section>
+
+    <!-- DPL Section -->
+    <section id="dpl">
+        <h2 class="section-title">Dosen Pembimbing Lapangan</h2>
+        <div class="dpl-container">
+            <div class="dpl-card">
+                <div class="profile-img" style="margin: 0 auto 1rem;"><i class="fa-solid fa-user-tie"></i></div>
+                <h3>Agung Purnomo, S.Si., M.S.</h3>
+                <p class="role">DPL KKN Kelompok 102</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="struktur" style="background: #f1f5f9;">
+        <h2 class="section-title">Struktur Kelompok</h2>
+        <div class="team-grid">
+
+            <!-- Armando -->
+            <div class="card">
+                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <h3>Armando Firlian Ihza Yulianto</h3>
+                <p class="role">S1 Teknologi Informasi</p>
+                <p class="dept">Fakultas Teknik</p>
+                <div class="contacts">
+                    <a href="https://instagram.com/ariztooo" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/6285176744073" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Alya Ayu Lestari -->
+            <div class="card">
+                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <h3>Alya Ayu Lestari</h3>
+                <p class="role">S1 Ilmu Komunikasi</p>
+                <p class="dept">FISIPOL</p>
+                <div class="contacts">
+                    <a href="https://instagram.com/aalyaayu_" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/6287864303875" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Ananda Putri Novitasari -->
+            <div class="card">
+                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <h3>Ananda Putri Novitasari</h3>
+                <p class="role">S1 Ilmu Administrasi Negara</p>
+                <p class="dept">FISIPOL</p>
+                <div class="contacts">
+                    <a href="https://instagram.com/ndptrn_" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/628812789338" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Maulana Iqbal -->
+            <div class="card">
+                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <h3>Maulana Iqbal</h3>
+                <p class="role">S1 Ilmu Administrasi Negara</p>
+                <p class="dept">FISIPOL</p>
+                <div class="contacts">
+                    <a href="https://instagram.com/_maul.i" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/6285236323024" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Muhammad Fahim Abiashan -->
+            <div class="card">
+                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <h3>Muhammad Fahim Abiashan</h3>
+                <p class="role">S1 Teknik Elektro</p>
+                <p class="dept">Fakultas Teknik</p>
+                <div class="contacts">
+                    <a href="https://instagram.com/abiashan123" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/6281329784456" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Nur Aisyah Kusmawati -->
+            <div class="card">
+                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <h3>Nur Aisyah Kusmawati</h3>
+                <p class="role">S1 Hukum</p>
+                <p class="dept">FISIPOL</p>
+                <div class="contacts">
+                    <a href="https://instagram.com/aaysa.nn" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/6281391446651" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Alya Khoyrunisa -->
+            <div class="card">
+                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <h3>Alya Khoyrunisa</h3>
+                <p class="role">S1 Hukum</p>
+                <p class="dept">FISIPOL</p>
+                <div class="contacts">
+                    <a href="https://instagram.com/alyaakhrns" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/6288238184435" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Ngalamul Huda -->
+            <div class="card">
+                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <h3>Ngalamul Huda</h3>
+                <p class="role">S1 Teknik Elektro</p>
+                <p class="dept">Fakultas Teknik</p>
+                <div class="contacts">
+                    <a href="https://instagram.com/a.nothing.me" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/6285117111373" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Bisma Wijaya Ismail -->
+            <div class="card">
+                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <h3>Bisma Wijaya Ismail</h3>
+                <p class="role">S1 Peternakan</p>
+                <p class="dept">Fakultas Pertanian</p>
+                <div class="contacts">
+                    <a href="https://wa.me/6282313044606" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Astyawati Azzahra -->
+            <div class="card">
+                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <h3>Astyawati Azzahra</h3>
+                <p class="role">S1 Teknologi Pangan</p>
+                <p class="dept">Fakultas Pertanian</p>
+                <div class="contacts">
+                    <a href="https://instagram.com/astyaazhr" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/6287723137239" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Dina Ramadhani -->
+            <div class="card">
+                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <h3>Dina Ramadhani</h3>
+                <p class="role">S1 Agribisnis</p>
+                <p class="dept">Fakultas Pertanian</p>
+                <div class="contacts">
+                    <a href="https://instagram.com/dinaarmd" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/6289603382978" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Paulus Anggoro Jatiwaluyo -->
+            <div class="card">
+                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <h3>Paulus Anggoro Jatiwaluyo</h3>
+                <p class="role">S1 Teknik Mekatronika</p>
+                <p class="dept">Fakultas Teknik</p>
+                <div class="contacts">
+                    <a href="https://instagram.com/paulusanggoro" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/6282219997339" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Gallery Section Placeholder -->
+    <section id="galeri">
+        <h2 class="section-title">Dokumentasi Kegiatan</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">Foto Kegiatan 1 (Nyusul)</div>
+            <div class="gallery-item">Foto Kegiatan 2 (Nyusul)</div>
+            <div class="gallery-item">Foto Kegiatan 3 (Nyusul)</div>
+            <div class="gallery-item">Foto Kegiatan 4 (Nyusul)</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 KKN Untidar Kelompok 102 - Padukuhan Ngentak, Poncosari</p>
+    </footer>
+
+</body>
+</html>
