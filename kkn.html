@@ -140,13 +140,19 @@
             border-top: 5px solid var(--accent);
         }
 
-        .dpl-card img {
-            width: 120px;
-            height: 120px;
+        .dpl-card .profile-img {
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 1rem;
-            background-color: #e2e8f0;
+            margin: 0 auto 1rem;
+            border: 3px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e2e8f0;
+            color: var(--text-muted);
+            font-size: 2.5rem;
         }
 
         /* Team Grid */
@@ -161,7 +167,7 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -171,20 +177,17 @@
 
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
 
-        .profile-img {
-            width: 100px;
-            height: 100px;
+        .card img.profile-img {
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 1rem;
-            background-color: #cbd5e1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94a3b8;
-            font-size: 2.5rem;
+            border: 3px solid var(--secondary);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         .card h3 {
@@ -197,7 +200,7 @@
             color: var(--secondary);
             font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
         }
 
         .card .dept {
@@ -208,13 +211,13 @@
 
         .card .contacts {
             display: flex;
-            gap: 0.8rem;
+            gap: 1rem;
             margin-top: auto;
         }
 
         .card .contacts a {
             color: var(--primary);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             transition: 0.2s;
         }
 
@@ -230,15 +233,22 @@
         }
 
         .gallery-item {
-            height: 200px;
+            height: 220px;
             background: #e2e8f0;
-            border-radius: 10px;
+            border-radius: 12px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             color: var(--text-muted);
             font-weight: 500;
             border: 2px dashed #cbd5e1;
+            gap: 0.5rem;
+        }
+
+        .gallery-item i {
+            font-size: 2rem;
+            color: #94a3b8;
         }
 
         /* Footer */
@@ -253,7 +263,7 @@
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            nav { display: none; } /* Bisa ditambahkan hamburger menu jika disukai */
+            nav { display: none; }
         }
     </style>
 </head>
@@ -283,7 +293,7 @@
         <h2 class="section-title">Dosen Pembimbing Lapangan</h2>
         <div class="dpl-container">
             <div class="dpl-card">
-                <div class="profile-img" style="margin: 0 auto 1rem;"><i class="fa-solid fa-user-tie"></i></div>
+                <div class="profile-img"><i class="fa-solid fa-user-tie"></i></div>
                 <h3>Agung Purnomo, S.Si., M.S.</h3>
                 <p class="role">DPL KKN Kelompok 102</p>
             </div>
@@ -297,7 +307,7 @@
 
             <!-- Armando -->
             <div class="card">
-                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <img src="mando.png" alt="Armando Firlian Ihza Yulianto" class="profile-img">
                 <h3>Armando Firlian Ihza Yulianto</h3>
                 <p class="role">S1 Teknologi Informasi</p>
                 <p class="dept">Fakultas Teknik</p>
@@ -309,7 +319,7 @@
 
             <!-- Alya Ayu Lestari -->
             <div class="card">
-                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <img src="Alya Ayu Lestari.jpeg" alt="Alya Ayu Lestari" class="profile-img">
                 <h3>Alya Ayu Lestari</h3>
                 <p class="role">S1 Ilmu Komunikasi</p>
                 <p class="dept">FISIPOL</p>
@@ -321,7 +331,7 @@
 
             <!-- Ananda Putri Novitasari -->
             <div class="card">
-                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <img src="nanda.png" alt="Ananda Putri Novitasari" class="profile-img">
                 <h3>Ananda Putri Novitasari</h3>
                 <p class="role">S1 Ilmu Administrasi Negara</p>
                 <p class="dept">FISIPOL</p>
@@ -333,7 +343,7 @@
 
             <!-- Maulana Iqbal -->
             <div class="card">
-                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <img src="maul.png" alt="Maulana Iqbal" class="profile-img">
                 <h3>Maulana Iqbal</h3>
                 <p class="role">S1 Ilmu Administrasi Negara</p>
                 <p class="dept">FISIPOL</p>
@@ -345,7 +355,7 @@
 
             <!-- Muhammad Fahim Abiashan -->
             <div class="card">
-                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <img src="fahim.png" alt="Muhammad Fahim Abiashan" class="profile-img">
                 <h3>Muhammad Fahim Abiashan</h3>
                 <p class="role">S1 Teknik Elektro</p>
                 <p class="dept">Fakultas Teknik</p>
@@ -357,7 +367,7 @@
 
             <!-- Nur Aisyah Kusmawati -->
             <div class="card">
-                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <img src="Aisyah.jpg" alt="Nur Aisyah Kusmawati" class="profile-img">
                 <h3>Nur Aisyah Kusmawati</h3>
                 <p class="role">S1 Hukum</p>
                 <p class="dept">FISIPOL</p>
@@ -369,7 +379,7 @@
 
             <!-- Alya Khoyrunisa -->
             <div class="card">
-                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <img src="alya khoyrunisa.jpg" alt="Alya Khoyrunisa" class="profile-img">
                 <h3>Alya Khoyrunisa</h3>
                 <p class="role">S1 Hukum</p>
                 <p class="dept">FISIPOL</p>
@@ -381,7 +391,7 @@
 
             <!-- Ngalamul Huda -->
             <div class="card">
-                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <img src="huda.png" alt="Ngalamul Huda" class="profile-img">
                 <h3>Ngalamul Huda</h3>
                 <p class="role">S1 Teknik Elektro</p>
                 <p class="dept">Fakultas Teknik</p>
@@ -393,7 +403,7 @@
 
             <!-- Bisma Wijaya Ismail -->
             <div class="card">
-                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <img src="bisma.png" alt="Bisma Wijaya Ismail" class="profile-img">
                 <h3>Bisma Wijaya Ismail</h3>
                 <p class="role">S1 Peternakan</p>
                 <p class="dept">Fakultas Pertanian</p>
@@ -404,7 +414,7 @@
 
             <!-- Astyawati Azzahra -->
             <div class="card">
-                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <img src="Astya.PNG" alt="Astyawati Azzahra" class="profile-img">
                 <h3>Astyawati Azzahra</h3>
                 <p class="role">S1 Teknologi Pangan</p>
                 <p class="dept">Fakultas Pertanian</p>
@@ -416,7 +426,7 @@
 
             <!-- Dina Ramadhani -->
             <div class="card">
-                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <img src="dina.png" alt="Dina Ramadhani" class="profile-img">
                 <h3>Dina Ramadhani</h3>
                 <p class="role">S1 Agribisnis</p>
                 <p class="dept">Fakultas Pertanian</p>
@@ -428,7 +438,7 @@
 
             <!-- Paulus Anggoro Jatiwaluyo -->
             <div class="card">
-                <div class="profile-img"><i class="fa-solid fa-user"></i></div>
+                <img src="paul.png" alt="Paulus Anggoro Jatiwaluyo" class="profile-img">
                 <h3>Paulus Anggoro Jatiwaluyo</h3>
                 <p class="role">S1 Teknik Mekatronika</p>
                 <p class="dept">Fakultas Teknik</p>
@@ -445,10 +455,22 @@
     <section id="galeri">
         <h2 class="section-title">Dokumentasi Kegiatan</h2>
         <div class="gallery-grid">
-            <div class="gallery-item">Foto Kegiatan 1 (Nyusul ya)</div>
-            <div class="gallery-item">Foto Kegiatan 2 (Nyusul)</div>
-            <div class="gallery-item">Foto Kegiatan 3 (Nyusul)</div>
-            <div class="gallery-item">Foto Kegiatan 4 (Nyusul)</div>
+            <div class="gallery-item">
+                <i class="fa-regular fa-image"></i>
+                <span>Foto Kegiatan 1 (Nyusul)</span>
+            </div>
+            <div class="gallery-item">
+                <i class="fa-regular fa-image"></i>
+                <span>Foto Kegiatan 2 (Nyusul)</span>
+            </div>
+            <div class="gallery-item">
+                <i class="fa-regular fa-image"></i>
+                <span>Foto Kegiatan 3 (Nyusul)</span>
+            </div>
+            <div class="gallery-item">
+                <i class="fa-regular fa-image"></i>
+                <span>Foto Kegiatan 4 (Nyusul)</span>
+            </div>
         </div>
     </section>
 
