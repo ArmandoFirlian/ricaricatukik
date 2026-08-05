@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Tag Mencegah Cache Browser -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
     <title>KKN Untidar Kelompok 102 - Poncosari 2026</title>
     <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -32,7 +38,6 @@
             line-height: 1.6;
         }
 
-        /* Header / Navbar */
         header {
             position: fixed;
             top: 0;
@@ -65,7 +70,6 @@
             color: var(--secondary);
         }
 
-        /* Hero Section */
         .hero {
             height: 100vh;
             background: linear-gradient(135deg, rgba(30, 58, 138, 0.85), rgba(13, 148, 136, 0.85)), 
@@ -100,7 +104,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Section Layout */
         section {
             padding: 5rem 8%;
         }
@@ -123,11 +126,10 @@
             border-radius: 2px;
         }
 
-        /* DPL Card */
         .dpl-container {
             display: flex;
             justify-content: center;
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
         }
 
         .dpl-card {
@@ -140,22 +142,15 @@
             border-top: 5px solid var(--accent);
         }
 
-        .dpl-card .profile-img {
+        .dpl-card img {
             width: 130px;
             height: 130px;
             border-radius: 50%;
             object-fit: cover;
-            margin: 0 auto 1rem;
+            margin-bottom: 1rem;
             border: 3px solid var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #e2e8f0;
-            color: var(--text-muted);
-            font-size: 2.5rem;
         }
 
-        /* Team Grid */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -225,7 +220,6 @@
             color: var(--accent);
         }
 
-        /* Photo Gallery Placeholder */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -251,7 +245,6 @@
             color: #94a3b8;
         }
 
-        /* Footer */
         footer {
             background: var(--primary);
             color: white;
@@ -260,7 +253,6 @@
             margin-top: 3rem;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
             nav { display: none; }
@@ -269,7 +261,6 @@
 </head>
 <body>
 
-    <!-- Header Navigation -->
     <header>
         <div class="logo">KKN 102 UNTIDAR</div>
         <nav>
@@ -280,7 +271,6 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <span class="badge">Kelompok 102</span>
         <h1>Mengabdi Bersama Dikenang Selamanya</h1>
@@ -288,24 +278,21 @@
         <p><i class="fa-regular fa-calendar-days"></i> 6 Agustus 2026</p>
     </section>
 
-    <!-- DPL Section -->
     <section id="dpl">
         <h2 class="section-title">Dosen Pembimbing Lapangan</h2>
         <div class="dpl-container">
             <div class="dpl-card">
-                <div class="profile-img"><i class="fa-solid fa-user-tie"></i></div>
+                <img src="DPL.jpeg" alt="Agung Purnomo">
                 <h3>Agung Purnomo, S.Si., M.S.</h3>
                 <p class="role">DPL KKN Kelompok 102</p>
             </div>
         </div>
     </section>
 
-    <!-- Team Section -->
     <section id="struktur" style="background: #f1f5f9;">
         <h2 class="section-title">Struktur Kelompok</h2>
         <div class="team-grid">
 
-            <!-- Armando -->
             <div class="card">
                 <img src="mando.png" alt="Armando Firlian Ihza Yulianto" class="profile-img">
                 <h3>Armando Firlian Ihza Yulianto</h3>
@@ -317,7 +304,6 @@
                 </div>
             </div>
 
-            <!-- Alya Ayu Lestari -->
             <div class="card">
                 <img src="Alya Ayu Lestari.jpeg" alt="Alya Ayu Lestari" class="profile-img">
                 <h3>Alya Ayu Lestari</h3>
@@ -329,7 +315,6 @@
                 </div>
             </div>
 
-            <!-- Ananda Putri Novitasari -->
             <div class="card">
                 <img src="nanda.png" alt="Ananda Putri Novitasari" class="profile-img">
                 <h3>Ananda Putri Novitasari</h3>
@@ -341,7 +326,6 @@
                 </div>
             </div>
 
-            <!-- Maulana Iqbal -->
             <div class="card">
                 <img src="maul.png" alt="Maulana Iqbal" class="profile-img">
                 <h3>Maulana Iqbal</h3>
@@ -353,7 +337,6 @@
                 </div>
             </div>
 
-            <!-- Muhammad Fahim Abiashan -->
             <div class="card">
                 <img src="fahim.png" alt="Muhammad Fahim Abiashan" class="profile-img">
                 <h3>Muhammad Fahim Abiashan</h3>
@@ -365,7 +348,6 @@
                 </div>
             </div>
 
-            <!-- Nur Aisyah Kusmawati -->
             <div class="card">
                 <img src="Aisyah.jpg" alt="Nur Aisyah Kusmawati" class="profile-img">
                 <h3>Nur Aisyah Kusmawati</h3>
@@ -377,7 +359,6 @@
                 </div>
             </div>
 
-            <!-- Alya Khoyrunisa -->
             <div class="card">
                 <img src="alya khoyrunisa.jpg" alt="Alya Khoyrunisa" class="profile-img">
                 <h3>Alya Khoyrunisa</h3>
@@ -389,7 +370,6 @@
                 </div>
             </div>
 
-            <!-- Ngalamul Huda -->
             <div class="card">
                 <img src="huda.png" alt="Ngalamul Huda" class="profile-img">
                 <h3>Ngalamul Huda</h3>
@@ -401,7 +381,6 @@
                 </div>
             </div>
 
-            <!-- Bisma Wijaya Ismail -->
             <div class="card">
                 <img src="bisma.png" alt="Bisma Wijaya Ismail" class="profile-img">
                 <h3>Bisma Wijaya Ismail</h3>
@@ -412,7 +391,6 @@
                 </div>
             </div>
 
-            <!-- Astyawati Azzahra -->
             <div class="card">
                 <img src="Astya.PNG" alt="Astyawati Azzahra" class="profile-img">
                 <h3>Astyawati Azzahra</h3>
@@ -424,7 +402,6 @@
                 </div>
             </div>
 
-            <!-- Dina Ramadhani -->
             <div class="card">
                 <img src="dina.png" alt="Dina Ramadhani" class="profile-img">
                 <h3>Dina Ramadhani</h3>
@@ -436,7 +413,6 @@
                 </div>
             </div>
 
-            <!-- Paulus Anggoro Jatiwaluyo -->
             <div class="card">
                 <img src="paul.png" alt="Paulus Anggoro Jatiwaluyo" class="profile-img">
                 <h3>Paulus Anggoro Jatiwaluyo</h3>
@@ -451,7 +427,6 @@
         </div>
     </section>
 
-    <!-- Gallery Section Placeholder -->
     <section id="galeri">
         <h2 class="section-title">Dokumentasi Kegiatan</h2>
         <div class="gallery-grid">
@@ -474,7 +449,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 KKN Untidar Kelompok 102 - Padukuhan Ngentak, Poncosari</p>
     </footer>
